@@ -17,3 +17,9 @@ export default function* rootSaga() {
     userSaga(),
   ]);
 }
+
+// function* rootSaga() {
+//   yield takeEvery('FETCH_MOVIES', fetchMovies);
+//   yield takeEvery('FETCH_GENRES', fetchGenres);
+//   yield takeEvery('EDIT', editMovie)
+// }
