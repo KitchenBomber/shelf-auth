@@ -30,7 +30,7 @@ handleChange= (event, property) => {
     render() {
         return (
             <div>
-                <h2>AddItem.jsx</h2>
+                <h2>Add your item!</h2>
                 <input type="text" placeholder="description" name="description" onChange={(event) => this.handleChange(event, "description")}></input>
                 <input type="text" placeholder="imageUrl" name="image" onChange={(event) => this.handleChange(event, "image")}></input>
                 <input type="text" placeholder="userId" name="userId" onChange={(event) => this.handleChange(event, "userId")}></input>
