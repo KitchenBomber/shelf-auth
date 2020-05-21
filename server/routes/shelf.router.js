@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
  * Add an item for the logged in user to the shelf
  */
 router.post('/', (req, res) => {
-
+    //const shelfItem = `INSERT INTO "item"()`
 });
 
 
