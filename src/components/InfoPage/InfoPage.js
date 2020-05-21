@@ -8,9 +8,10 @@ import React from 'react';
 
 
 const InfoPage = () => (
+
   <div>
     <p>
-    {/* {JSON.stringify(this.props.setItem)}  */}
+    {/* {JSON.stringify(this.props)}  */}
 
     HELLO
     </p>
