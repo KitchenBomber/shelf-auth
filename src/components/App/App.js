@@ -21,8 +21,10 @@ import './App.css';
 
 class App extends Component {
   componentDidMount () {
+    console.log('HERE I AM ',this.props.reduxState);
     this.props.dispatch({type: 'FETCH_USER'});
-    this.props.dispatch({type: 'FETCH_ITEMS' })
+    this.props.dispatch({type: 'FETCH_ITEMS' }); 
+    
   }
 
   render() {
@@ -54,7 +56,8 @@ class App extends Component {
             <ProtectedRoute
               exact
               path="/info"
-              component={InfoPage}
+              render={(props) => <InfoPage setItem = {this.props.reduxState.setItem} /> }
+              // component={InfoPage}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
@@ -64,5 +67,17 @@ class App extends Component {
       </Router>
   )}
 }
+const putStateOnProps = (reduxState) => ({reduxState})
+export default connect(putStateOnProps)(App);
 
-export default connect()(App);
+{/* <Route path="/details" render={(props) => <Details {...props} dispatch={this.props.dispatch} />} /> */}
+
+
+// const PrivateRoute = ({ component: Component, handleLogout, isAuthenticated, ...rest }) => (
+//   <Route {...rest} render={(props) => (
+//     isAuthenticated === true
+//       ? <Component {...props} handleLogout={handleLogout} />
+//       : <Redirect to="/Login" />
+//   )} />
+// );
+
