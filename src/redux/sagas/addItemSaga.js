@@ -6,8 +6,9 @@ function* watcher() {
     yield takeEvery('NEW_ITEM', newItem);
 }
 
-function* newItem() {  //action
+function* newItem(action) {  //action
     try {
+        console.log('action.payload', action.payload )
         const response = yield axios.post('/api/shelf')
         yield put({ type: "FETCH_ITEMS", payload: response.data })
 

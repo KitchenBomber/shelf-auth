@@ -6,7 +6,7 @@ export class AddItem extends Component {
     state = {
         items: {
             description: '',
-            imageUrl: '',
+            image_url: '',
             user_id: this.props.reduxState.user.id
         }
     }
@@ -35,7 +35,7 @@ handleChange= (event, property) => {
             <div>
                 <h2>Add your item!</h2>
                 <input type="text" placeholder="description" name="description" onChange={(event) => this.handleChange(event, "description")}></input>
-                <input type="text" placeholder="imageUrl" name="imageUrl" onChange={(event) => this.handleChange(event, "imageUrl")}></input>
+                <input type="text" placeholder="image url" name="image_url" onChange={(event) => this.handleChange(event, "image_url")}></input>
                 <button onClick={this.handleClick}>Add Item!</button><br/>
 
                 
