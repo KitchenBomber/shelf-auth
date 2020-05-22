@@ -1,4 +1,7 @@
 import React from 'react';
+import AddItem from '../AddItem/AddItem';
+import DisplayList from '../DisplayList/DisplayList';
+
 // //import { connect } from 'react-redux';
 
 // This is one of our simplest components
@@ -10,11 +13,11 @@ import React from 'react';
 const InfoPage = () => (
 
   <div>
-    <p>
+    <section>
     {/* {JSON.stringify(this.props)}  */}
-
-    HELLO
-    </p>
+    <DisplayList />
+   <AddItem />
+    </section>
   </div>
 );
 

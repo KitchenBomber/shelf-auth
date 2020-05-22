@@ -1,6 +1,6 @@
-const setItems = (state = [], action) => {
+const setItems = (state = {}, action) => {
     switch (action.type) {
-        case 'SET_ITEMS':
+        case 'NEW_ITEM':
             return action.payload;
         default:
             return state;

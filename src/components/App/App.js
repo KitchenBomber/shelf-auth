@@ -16,7 +16,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
-import AddItem from '../AddItem/AddItem';
+//import AddItem from '../AddItem/AddItem';
 
 import './App.css';
 
@@ -59,15 +59,16 @@ class App extends Component {
             <ProtectedRoute
               exact
               path="/info"
-              render={(props) => <InfoPage setItem = {this.props.reduxState.setItem} dispatch ={this.props.dispatch} /> }
+              component = {InfoPage}
+              // render={(props) => <InfoPage setItem = {this.props.reduxState.setItem} dispatch ={this.props.dispatch} /> }
               // component={InfoPage}
             />
 
-            <ProtectedRoute
+            {/* <ProtectedRoute
               exact
               path="/addItem"
               component={AddItem}
-            />
+            /> */}
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
             

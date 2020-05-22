@@ -20,17 +20,17 @@ router.get('/', (req, res) => {
 /**
  * Add an item for the logged in user to the shelf
  */
-router.post('/', (req, res) => {
-    //const shelfItem = `INSERT INTO "item"("description", "image_url", "user_id")
-    //VALUES ($1, $2, $3);`;
-    //const values = [req.body.description, req.body.image_url, req.user.id];
-    //pool.query(shelfItem, values)
-    //.then((response) =>{
-    //    res.sendStatus(201)
-    //})
-    //.catch((error) =>{
-        //console.log('error in router POST', error);
-    //})
+router.post('/api/shelf', (req, res) => {
+    const shelfItem = `INSERT INTO "item"("description", "image_url", "user_id")
+    VALUES ($1, $2, $3);`;
+    const values = [req.body.description, req.body.image_url, req.user.id];
+    pool.query(shelfItem, values)
+    .then((response) =>{
+       res.sendStatus(201)
+    })
+    .catch((error) =>{
+        console.log('error in router POST', error);
+    })
 });
 
 
@@ -38,7 +38,16 @@ router.post('/', (req, res) => {
  * Delete an item if it's something the logged in user added
  */
 router.delete('/:id', (req, res) => {
-
+    //console.log(req.params.id)
+    //const shelfItem = `DELETE FROM "item" WHERE "id" = $1;`;
+    //pool.query(shelfItem, [req.params.id])
+    //.then((response) =>{
+        //res.sendStatus(200);
+    //})
+    //.catch((error) =>{
+        //console.log('error deleting item from DB', error);
+        //res.sendStatus(500);
+    //})
 });
 
 
