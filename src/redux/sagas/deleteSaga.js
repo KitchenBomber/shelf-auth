@@ -3,16 +3,17 @@ import { takeEvery, put } from 'redux-saga/effects';
 
 
 function* watcher() {
-    yield takeEvery('NEW_ITEM', newItem);
+    yield takeEvery('DELETE_ITEM', deleteItem);
 }
 
-function* newItem(action) {  //action
+function* deleteItem(action) {  //action
     try {
-        console.log('action.payload', action.payload )
-        const response = yield axios.post('/api/shelf', action.payload)
+        console.log('action.payload', action.payload)
+        
+        const response = yield axios.delete(`/api/shelf/${action.payload}`);
         yield put({ type: "FETCH_ITEMS", payload: response.data })
 
-        
+
     } catch (error) {
         console.log(error);
 

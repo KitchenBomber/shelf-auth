@@ -39,16 +39,16 @@ router.post('/', (req, res) => {
  * Delete an item if it's something the logged in user added
  */
 router.delete('/:id', (req, res) => {
-    //console.log(req.params.id)
-    //const shelfItem = `DELETE FROM "item" WHERE "id" = $1;`;
-    //pool.query(shelfItem, [req.params.id])
-    //.then((response) =>{
-        //res.sendStatus(200);
-    //})
-    //.catch((error) =>{
-        //console.log('error deleting item from DB', error);
-        //res.sendStatus(500);
-    //})
+    console.log('!!!!1111!', req.params.id)
+    const shelfItem = `DELETE FROM "item" WHERE "id" = $1;`;
+    pool.query(shelfItem, [req.params.id])
+    .then((response) =>{
+        res.sendStatus(200);
+    })
+    .catch((error) =>{
+        console.log('error deleting item from DB', error);
+        res.sendStatus(500);
+    })
 });
 
 
